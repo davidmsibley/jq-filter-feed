@@ -1,0 +1,23 @@
+{
+  "name": "jq-filter-feed",
+  "version": "0.0.1",
+  "description": "Filter a json webservice with jq!",
+  "main": "server.js",
+  "bin": {
+    "jq-filter-feed": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "David M Sibley <sibley@wisc.edu>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "command-line-args": "^4.0.5",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "node-jq": "^0.5.4",
+    "request": "^2.81.0",
+    "url-parse": "^1.1.9"
+  }
+}
