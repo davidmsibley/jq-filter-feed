@@ -4,7 +4,8 @@
   "description": "Filter a json webservice with jq!",
   "main": "server.js",
   "bin": {
-    "jq-filter-feed": "./cli.js"
+    "jq-filter-feed": "./cli.js",
+    "jqf": "./cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
