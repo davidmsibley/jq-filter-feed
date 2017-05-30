@@ -1,6 +1,6 @@
 {
   "name": "jq-filter-feed",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Filter a json webservice with jq!",
   "main": "server.js",
   "bin": {
