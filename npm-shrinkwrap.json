@@ -1784,6 +1784,11 @@
       "from": "timed-out@>=3.0.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/timed-out/-/timed-out-3.1.3.tgz"
     },
+    "tmp": {
+      "version": "0.0.31",
+      "from": "tmp@latest",
+      "resolved": "https://registry.npmjs.org/tmp/-/tmp-0.0.31.tgz"
+    },
     "to-absolute-glob": {
       "version": "0.1.1",
       "from": "to-absolute-glob@>=0.1.1 <0.2.0",

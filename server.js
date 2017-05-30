@@ -4,6 +4,8 @@ var express = require('express');
 var cors = require('cors');
 var parseUrl = require('url-parse');
 var jqFilter = require('./jq-filter');
+var tmp = require('tmp');
+var fs = require('fs');
 
 var JQFilterFeed = function JQFilterFeed(config) {
     var url = config.url;
@@ -20,14 +22,28 @@ var JQFilterFeed = function JQFilterFeed(config) {
         'url': url
       }, function(error, response, body) {
         if (!error) {
-          jqFilter(jq, body)
-          .then(function(result) {
-            resp.json(result);
-          })
-          .catch(function(error) {
-            console.log(error);
-            resp.status(500).send('Could not filter response');
-          })
+          if (50000 > body.length) {
+            jqFilter(jq, body, 'string')
+            .then(function(result) {
+              resp.json(result);
+            })
+            .catch(function(error) {
+              console.log(error);
+              resp.status(500).send('Could not filter response');
+            })
+          } else {
+            tmp.file({'postfix': '.json'}, function(err, path, fd) {
+              fs.writeSync(fd, body);
+              jqFilter(jq, path, 'file')
+              .then(function(result) {
+                resp.json(result);
+              })
+              .catch(function(error) {
+                console.log(error);
+                resp.status(500).send('Could not filter response');
+              })
+            });
+          }
         } else {
           console.log(error);
           resp.status(500).send('Could not request data from url');
