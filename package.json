@@ -12,6 +12,10 @@
   },
   "author": "David M Sibley <sibley@wisc.edu>",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidmsibley/jq-filter-feed"
+  },
   "dependencies": {
     "command-line-args": "^4.0.5",
     "cors": "^2.8.3",
