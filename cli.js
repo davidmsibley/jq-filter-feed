@@ -18,7 +18,8 @@ var optionsDefinitions = [
   {
     'name': 'jq',
     'type': String,
-    'description': 'jq filter to run feed against'
+    'description': 'jq filter to run feed against',
+    'defaultValue': '.'
   }
 ];
 
